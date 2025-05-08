@@ -1,0 +1,134 @@
+name,element,type,subtype,weakness
+Bulbasaur,Grass,Pokemon,Basic,Fire
+Caterpie,Grass,Pokemon,Basic,Fire
+Weedle,Grass,Pokemon,Basic,Fire
+Oddish,Grass,Pokemon,Basic,Fire
+Paras,Grass,Pokemon,Basic,Fire
+Venonat,Grass,Pokemon,Basic,Fire
+Bellsprout,Grass,Pokemon,Basic,Fire
+Exeggcute,Grass,Pokemon,Basic,Fire
+Tangela,Grass,Pokemon,Basic,Fire
+Scyther,Grass,Pokemon,Basic,Fire
+Pinsir,Grass,Pokemon,Basic,Fire
+Cottonee,Grass,Pokemon,Basic,Fire
+Petilil,Grass,Pokemon,Basic,Fire
+Skiddo,Grass,Pokemon,Basic,Fire
+Charmander,Fire,Pokemon,Basic,Water
+Vulpix,Fire,Pokemon,Basic,Water
+Growlithe,Fire,Pokemon,Basic,Water
+Ponyta,Fire,Pokemon,Basic,Water
+Magmar,Fire,Pokemon,Basic,Water
+Moltres,Fire,Pokemon,Basic,Lightning
+Moltres ex,Fire,Pokemon,Basic,Lightning
+Heatmor,Fire,Pokemon,Basic,Water
+Salandit,Fire,Pokemon,Basic,Water
+Sizzlipede,Fire,Pokemon,Basic,Water
+Squirtle,Water,Pokemon,Basic,Lightning
+Psyduck,Water,Pokemon,Basic,Lightning
+Poliwag,Water,Pokemon,Basic,Lightning
+Tentacool,Water,Pokemon,Basic,Lightning
+Seel,Water,Pokemon,Basic,Lightning
+Shellder,Water,Pokemon,Basic,Lightning
+Krabby,Water,Pokemon,Basic,Lightning
+Horsea,Water,Pokemon,Basic,Lightning
+Goldeen,Water,Pokemon,Basic,Lightning
+Staryu,Water,Pokemon,Basic,Lightning
+Magikarp,Water,Pokemon,Basic,Lightning
+Lapras,Water,Pokemon,Basic,Lightning
+Articuno,Water,Pokemon,Basic,Lightning
+Articuno ex,Water,Pokemon,Basic,Lightning
+Ducklett,Water,Pokemon,Basic,Lightning
+Froakie,Water,Pokemon,Basic,Lightning
+Pyukumuku,Water,Pokemon,Basic,Lightning
+Bruxish,Water,Pokemon,Basic,Lightning
+Snom,Water,Pokemon,Basic,Metal
+Pikachu,Lightning,Pokemon,Basic,Fighting
+Pikachu ex,Lightning,Pokemon,Basic,Fighting
+Magnemite,Lightning,Pokemon,Basic,Fighting
+Voltorb,Lightning,Pokemon,Basic,Fighting
+Electabuzz,Lightning,Pokemon,Basic,Fighting
+Zapdos,Lightning,Pokemon,Basic,Lightning
+Zapdos ex,Lightning,Pokemon,Basic,Lightning
+Blitzle,Lightning,Pokemon,Basic,Fighting
+Tynamo,Lightning,Pokemon,Basic,Fighting
+Helioptile,Lightning,Pokemon,Basic,Fighting
+Pincurchin,Lightning,Pokemon,Basic,Fighting
+Clefairy,Psychic,Pokemon,Basic,Metal
+Abra,Psychic,Pokemon,Basic,Darkness
+Slowpoke,Psychic,Pokemon,Basic,Darkness
+Gastly,Psychic,Pokemon,Basic,Darkness
+Drowzee,Psychic,Pokemon,Basic,Darkness
+Mr. Mime,Psychic,Pokemon,Basic,Darkness
+Jynx,Psychic,Pokemon,Basic,Darkness
+Mewtwo,Psychic,Pokemon,Basic,Darkness
+Mewtwo ex,Psychic,Pokemon,Basic,Darkness
+Ralts,Psychic,Pokemon,Basic,Darkness
+Woobat,Psychic,Pokemon,Basic,Darkness
+Golett,Psychic,Pokemon,Basic,Darkness
+Sandshrew,Fighting,Pokemon,Basic,Grass
+Diglett,Fighting,Pokemon,Basic,Grass
+Mankey,Fighting,Pokemon,Basic,Psychic
+Machop,Fighting,Pokemon,Basic,Psychic
+Geodude,Fighting,Pokemon,Basic,Grass
+Onix,Fighting,Pokemon,Basic,Grass
+Cubone,Fighting,Pokemon,Basic,Grass
+Hitmonlee,Fighting,Pokemon,Basic,Psychic
+Hitmonchan,Fighting,Pokemon,Basic,Psychic
+Rhyhorn,Fighting,Pokemon,Basic,Grass
+Mienfoo,Fighting,Pokemon,Basic,Psychic
+Clobbopus,Fighting,Pokemon,Basic,Psychic
+Ekans,Darkness,Pokemon,Basic,Fighting
+Nidoran♀,Darkness,Pokemon,Basic,Fighting
+Nidoran♂,Darkness,Pokemon,Basic,Fighting
+Zubat,Darkness,Pokemon,Basic,Fighting
+Grimer,Darkness,Pokemon,Basic,Fighting
+Koffing,Darkness,Pokemon,Basic,Fighting
+Mawile,Metal,Pokemon,Basic,Fire
+Pawniard,Metal,Pokemon,Basic,Fire
+Meltan,Metal,Pokemon,Basic,Fire
+Dratini,Dragon,Pokemon,Basic,
+Pidgey,Colorless,Pokemon,Basic,Lightning
+Rattata,Colorless,Pokemon,Basic,Fighting
+Spearow,Colorless,Pokemon,Basic,Lightning
+Jigglypuff,Colorless,Pokemon,Basic,Fighting
+Meowth,Colorless,Pokemon,Basic,Fighting
+Farfetch'd,Colorless,Pokemon,Basic,Lightning
+Doduo,Colorless,Pokemon,Basic,Lightning
+Lickitung,Colorless,Pokemon,Basic,Fighting
+Chansey,Colorless,Pokemon,Basic,Fighting
+Kangaskhan,Colorless,Pokemon,Basic,Fighting
+Tauros,Colorless,Pokemon,Basic,Fighting
+Ditto,Colorless,Pokemon,Basic,Fighting
+Eevee,Colorless,Pokemon,Basic,Fighting
+Eevee,Colorless,Pokemon,Basic,Fighting
+Eevee,Colorless,Pokemon,Basic,Fighting
+Porygon,Colorless,Pokemon,Basic,Fighting
+Snorlax,Colorless,Pokemon,Basic,Fighting
+Minccino,Colorless,Pokemon,Basic,Fighting
+Wooloo,Colorless,Pokemon,Basic,Fighting
+Bulbasaur,Grass,Pokemon,Basic,Fire
+Pinsir,Grass,Pokemon,Basic,Fire
+Charmander,Fire,Pokemon,Basic,Water
+Squirtle,Water,Pokemon,Basic,Lightning
+Lapras,Water,Pokemon,Basic,Lightning
+Slowpoke,Psychic,Pokemon,Basic,Darkness
+Diglett,Fighting,Pokemon,Basic,Grass
+Cubone,Fighting,Pokemon,Basic,Grass
+Meowth,Colorless,Pokemon,Basic,Fighting
+Ditto,Colorless,Pokemon,Basic,Fighting
+Eevee,Colorless,Pokemon,Basic,Fighting
+Porygon,Colorless,Pokemon,Basic,Fighting
+Snorlax,Colorless,Pokemon,Basic,Fighting
+Moltres ex,Fire,Pokemon,Basic,Lightning
+Articuno ex,Water,Pokemon,Basic,Lightning
+Pikachu ex,Lightning,Pokemon,Basic,Fighting
+Zapdos ex,Lightning,Pokemon,Basic,Lightning
+Mewtwo ex,Psychic,Pokemon,Basic,Darkness
+Moltres ex,Fire,Pokemon,Basic,Lightning
+Articuno ex,Water,Pokemon,Basic,Lightning
+Zapdos ex,Lightning,Pokemon,Basic,Lightning
+Pikachu ex,Lightning,Pokemon,Basic,Fighting
+Mewtwo ex,Psychic,Pokemon,Basic,Darkness
+Mew,Psychic,Pokemon,Basic,Darkness
+Pikachu ex,Lightning,Pokemon,Basic,Fighting
+Mewtwo ex,Psychic,Pokemon,Basic,Darkness
