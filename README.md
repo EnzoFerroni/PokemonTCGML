@@ -63,12 +63,12 @@ O modelo apresentou bom desempenho ao prever elementos baseados unicamente na fr
 Na tela principal, o jogador visualiza 5 cartas aleatórias de Pokémon com elementos distintos. A interface apresenta título, instruções e design colorido com animações suaves.
 
 ### Gerando Nova Partida
-<img width="910" alt="Screenshot 2025-05-08 at 16 15 43" src="https://github.com/user-attachments/assets/fa4cbd57-fed0-4113-ae74-77cb7ab9ad9f" />
+<img width="910" alt="Screenshot 2025-05-08 at 16 46 45" src="https://github.com/user-attachments/assets/17601f47-d83e-4d37-9800-e020f75eb65d" />
 
 Ao clicar no botão “Nova Partida”, uma nova mão com 5 cartas diferentes é sorteada. Cada carta exibe nome, elemento e fraqueza. Essa rotação permite testar diferentes cenários para o modelo.
 
 ### Jogada Inteligente com CoreML
-<img width="910" alt="Screenshot 2025-05-08 at 16 19 57" src="https://github.com/user-attachments/assets/f333c012-e814-4f2f-a225-2dfaee53e075" />
+<img width="910" alt="Screenshot 2025-05-08 at 16 47 23" src="https://github.com/user-attachments/assets/5f5406f0-b966-44d0-92ae-6ffb61af8ff6" />
 
 Quando o jogador seleciona uma carta, ela é destacada com uma nova cor de fundo. O modelo CoreML, treinado previamente, faz a previsão do elemento ideal que o oponente deveria jogar, baseado exclusivamente na fraqueza da carta escolhida.
 
