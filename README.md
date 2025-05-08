@@ -57,6 +57,21 @@ A interface foi estilizada com gradientes, sombras, botões personalizados e lay
 
 O modelo apresentou bom desempenho ao prever elementos baseados unicamente na fraqueza da carta escolhida. A simplificação do dataset contribuiu para maior precisão. A integração com o SwiftUI demonstrou ser eficaz para criar uma interface intuitiva e responsiva. A nova abordagem (sem considerar uma mão fixa para o oponente) torna o modelo mais direto e eficaz para um comportamento básico e estratégico.
 
+### Tela Inicial do Jogo
+<img width="910" alt="Screenshot 2025-05-08 at 16 14 16" src="https://github.com/user-attachments/assets/35ffc079-f62c-4446-87a2-69e9bf74d494" />
+
+Na tela principal, o jogador visualiza 5 cartas aleatórias de Pokémon com elementos distintos. A interface apresenta título, instruções e design colorido com animações suaves.
+
+### Gerando Nova Partida
+<img width="910" alt="Screenshot 2025-05-08 at 16 15 43" src="https://github.com/user-attachments/assets/fa4cbd57-fed0-4113-ae74-77cb7ab9ad9f" />
+
+Ao clicar no botão “Nova Partida”, uma nova mão com 5 cartas diferentes é sorteada. Cada carta exibe nome, elemento e fraqueza. Essa rotação permite testar diferentes cenários para o modelo.
+
+### Jogada Inteligente com CoreML
+<img width="910" alt="Screenshot 2025-05-08 at 16 19 57" src="https://github.com/user-attachments/assets/f333c012-e814-4f2f-a225-2dfaee53e075" />
+
+Quando o jogador seleciona uma carta, ela é destacada com uma nova cor de fundo. O modelo CoreML, treinado previamente, faz a previsão do elemento ideal que o oponente deveria jogar, baseado exclusivamente na fraqueza da carta escolhida.
+
 ## 5. Conclusão
 
 O projeto demonstrou como modelos supervisionados simples podem ser aplicados em jogos para simular decisões inteligentes. A estrutura modular permite fácil expansão, como inclusão de novos atributos ou adaptação para outros jogos.
