@@ -1,92 +1,88 @@
-# Pokemon TCG ML
-# Aplicação de Aprendizado de Máquina em Jogos de Cartas Digitais: Um Estudo de Caso com Pokémon TCG Pocket
+# PokemonTCGML
 
-## Resumo
+[![macOS](https://img.shields.io/badge/macOS-13.3%2B-000000?logo=apple)](https://developer.apple.com/macos/)
+[![Swift](https://img.shields.io/badge/Swift-5-F05138?logo=swift&logoColor=white)](https://swift.org)
+[![Core ML](https://img.shields.io/badge/Core%20ML-Create%20ML-34C759)](https://developer.apple.com/documentation/coreml)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-Este artigo apresenta o desenvolvimento de uma aplicação interativa para macOS, baseada no jogo de cartas Pokémon TCG Pocket, com suporte a predições de jogadas usando aprendizado de máquina. Utilizando o framework CoreML da Apple em conjunto com SwiftUI, o sistema é capaz de prever a jogada ideal do oponente com base na carta selecionada pelo jogador. A abordagem adotada contempla desde o processamento e modelagem dos dados até a integração de um modelo treinado com interface gráfica amigável e responsiva.
+A macOS card game based on Pokémon TCG Pocket where a Core ML model predicts the opponent's best counter-play.
 
-## 1. Introdução
+<img width="910" alt="Game screen" src="https://github.com/user-attachments/assets/35ffc079-f62c-4446-87a2-69e9bf74d494" />
 
-Jogos de cartas colecionáveis como o Pokémon TCG envolvem estratégias baseadas em tipos e fraquezas. O objetivo deste trabalho foi explorar a integração de modelos preditivos em um jogo digital, utilizando dados reais das cartas e um modelo supervisionado de classificação, para simular uma jogada inteligente por parte do oponente.
+## Table of Contents
 
-## 2. Metodologia
+- [About](#about)
+- [How It Works](#how-it-works)
+- [Results](#results)
+- [Built With](#built-with)
+- [Getting Started](#getting-started)
+- [Future Work](#future-work)
+- [References](#references)
+- [License](#license)
 
-### 2.1 Coleta e Processamento dos Dados
+## About
 
-Os dados das cartas foram obtidos em formato JSON contendo atributos como nome, tipo, subtipo, elemento e fraqueza. Após filtragem (type = "pokemon", subtype = "Basic"), os dados foram transformados em um CSV com as colunas: name, element, type, subtype, weakness.
+This project explores how a simple supervised model can drive in-game decisions. It
+was written up as a short scientific-style article for a Mackenzie course (2025). The
+player is dealt five Pokémon cards; when they pick one, a Core ML classifier predicts
+which element the opponent should play to exploit that card's weakness.
 
-### 2.2 Construção do Dataset de Treinamento
+## How It Works
 
-Inicialmente foram consideradas combinações com cinco cartas disponíveis para o oponente. No entanto, o modelo final foi simplificado para trabalhar com o conceito de jogada ideal baseada exclusivamente na fraqueza da carta escolhida pelo jogador, ignorando a mão do oponente.
+1. **Data collection.** Card data (name, type, subtype, element, weakness) comes from
+   the open [Pokémon TCG Pocket card database](https://github.com/hugoburguete/pokemon-tcg-pocket-card-database),
+   filtered to Basic Pokémon and exported to `cards.csv`.
+2. **Dataset.** An early version modeled the opponent's five-card hand. The final
+   version simplifies the task to the ideal choice given the player's card: inputs
+   `input_element` and `input_weakness`, target `ideal_choice`. 3,000 synthetic
+   samples were generated, split 80/20 into `train.csv` and `test.csv`.
+3. **Training.** Create ML's Tabular Classification template, exported as
+   `ModeloPokemonNew.mlmodel` (the earlier hand-based model is kept as
+   `ModeloPokemonOld.mlmodel`).
+4. **App.** SwiftUI deals a new hand on "New Match", highlights the selected card and
+   shows the model's prediction.
 
-O dataset final tem a seguinte estrutura:
+## Results
 
-* input\_element: elemento da carta escolhida
-* input\_weakness: fraqueza da carta escolhida
-* ideal\_choice: igual à fraqueza (o modelo aprende que o oponente deve usar o tipo que é fraqueza do jogador)
+The simplified model predicts the counter element reliably, since the target is
+fully determined by the card's weakness. Dropping the opponent's hand made the model
+more direct and accurate for basic strategic behavior.
 
-Foram geradas 3.000 amostras sintéticas para treino e teste, distribuídas em 80% treino e 20% teste.
+| New match | Prediction |
+| :---: | :---: |
+| <img width="440" alt="New match" src="https://github.com/user-attachments/assets/17601f47-d83e-4d37-9800-e020f75eb65d" /> | <img width="440" alt="Prediction" src="https://github.com/user-attachments/assets/5f5406f0-b966-44d0-92ae-6ffb61af8ff6" /> |
 
-### 2.3 Treinamento com CreateML
+## Built With
 
-Utilizou-se o CreateML com o template Tabular Classification, onde o modelo aprendeu a prever o elemento ideal (ideal\_choice) com base nos atributos de entrada. O modelo foi exportado como ModeloPokemonNew\.mlmodel.
+- SwiftUI (macOS)
+- Core ML and Create ML (Tabular Classification)
 
-## 3. Desenvolvimento da Aplicação
+## Getting Started
 
-### 3.1 Arquitetura
+Requirements: macOS 13.3 or later and Xcode 15 or later.
 
-A aplicação foi desenvolvida em SwiftUI com foco em compatibilidade com macOS. A estrutura foi organizada em:
+```bash
+git clone https://github.com/EnzoFerroni/PokemonTCGML.git
+cd PokemonTCGML
+open PokemonTCGPocketPC/PokemonTCGPocketPC.xcodeproj
+```
 
-* Modelo de dados Card
-* GameViewModel com lógica de negócio e integração CoreML
-* Interface gráfica com ContentView e CardView
+Select "My Mac" and press Run.
 
-### 3.2 Lógica de Jogo
+## Future Work
 
-* O jogador recebe 5 cartas com elementos distintos
-* Oponente pode escolher qualquer elemento do jogo (não está limitado a uma mão)
-* Jogador escolhe uma carta
-* O modelo prevê o elemento ideal para contra-atacar, com base na fraqueza da carta escolhida
-* A resposta do modelo é exibida na interface
+- Add more attributes (HP, rarity, attacks)
+- Learn from previous plays with a sequential model
+- Take the opponent's available cards into account
+- Port to iOS and show card artwork
 
-### 3.3 Interface do Usuário
+## References
 
-A interface foi estilizada com gradientes, sombras, botões personalizados e layout responsivo. As cartas apresentam informações como nome, elemento e fraqueza, com destaque visual para a carta selecionada.
+- Apple. [Create ML documentation](https://developer.apple.com/documentation/createml)
+- Apple. [Core ML documentation](https://developer.apple.com/documentation/coreml)
+- [Pokémon TCG Pocket card database](https://github.com/hugoburguete/pokemon-tcg-pocket-card-database)
 
-## 4. Resultados e Discussão
+## License
 
-O modelo apresentou bom desempenho ao prever elementos baseados unicamente na fraqueza da carta escolhida. A simplificação do dataset contribuiu para maior precisão. A integração com o SwiftUI demonstrou ser eficaz para criar uma interface intuitiva e responsiva. A nova abordagem (sem considerar uma mão fixa para o oponente) torna o modelo mais direto e eficaz para um comportamento básico e estratégico.
-
-### Tela Inicial do Jogo
-<img width="910" alt="Screenshot 2025-05-08 at 16 14 16" src="https://github.com/user-attachments/assets/35ffc079-f62c-4446-87a2-69e9bf74d494" />
-
-Na tela principal, o jogador visualiza 5 cartas aleatórias de Pokémon com elementos distintos. A interface apresenta título, instruções e design colorido com animações suaves.
-
-### Gerando Nova Partida
-<img width="910" alt="Screenshot 2025-05-08 at 16 46 45" src="https://github.com/user-attachments/assets/17601f47-d83e-4d37-9800-e020f75eb65d" />
-
-Ao clicar no botão “Nova Partida”, uma nova mão com 5 cartas diferentes é sorteada. Cada carta exibe nome, elemento e fraqueza. Essa rotação permite testar diferentes cenários para o modelo.
-
-### Jogada Inteligente com CoreML
-<img width="910" alt="Screenshot 2025-05-08 at 16 47 23" src="https://github.com/user-attachments/assets/5f5406f0-b966-44d0-92ae-6ffb61af8ff6" />
-
-Quando o jogador seleciona uma carta, ela é destacada com uma nova cor de fundo. O modelo CoreML, treinado previamente, faz a previsão do elemento ideal que o oponente deveria jogar, baseado exclusivamente na fraqueza da carta escolhida.
-
-## 5. Conclusão
-
-O projeto demonstrou como modelos supervisionados simples podem ser aplicados em jogos para simular decisões inteligentes. A estrutura modular permite fácil expansão, como inclusão de novos atributos ou adaptação para outros jogos.
-
-## 6. Trabalhos Futuros
-
-* Incorporar mais atributos (HP, raridade, ataques)
-* Analisar jogadas anteriores para construir um modelo sequencial
-* Exportar para plataformas iOS e multiplataforma
-* Implementar pontuação, turnos e multiplayer local
-* Evoluir o modelo para também considerar cartas disponíveis do oponente (realismo tático)
-* Apresentar imagens das cartas do jogo
-
-## Referências
-
-* Apple. CreateML Documentation. [https://developer.apple.com/documentation/createml](https://developer.apple.com/documentation/createml)
-* Apple. CoreML Documentation. [https://developer.apple.com/documentation/coreml](https://developer.apple.com/documentation/coreml)
-* Pokémon TCG Pocket Dataset. [https://github.com/hugoburguete/pokemon-tcg-pocket-card-database](https://github.com/hugoburguete/pokemon-tcg-pocket-card-database$0)
+Released under the [MIT License](LICENSE). Copyright (c) 2025 Enzo Ferroni. Pokémon
+and card names are trademarks of their respective owners.
